@@ -1,0 +1,11 @@
+@import url('./reset');
+@import url('./variables/global');
+
+body {
+    font-family: var(--font-family);
+}
+
+.app {
+    width: 100vw;
+    min-height: 100vh;
+}
