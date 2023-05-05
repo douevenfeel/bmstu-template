@@ -1,6 +1,5 @@
 {
     "name": "bmstu-template",
-    "version": "0.1.0",
     "private": true,
     "dependencies": {
         "@emotion/react": "^11.10.8",
@@ -18,10 +17,14 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "lint:ts": "npx eslint **/*.{ts,tsx}",
-        "lint:ts:fix": "npx eslint **/*.{ts,tsx} --fix",
-        "lint:css": "npx stylelint **/*.css",
-        "lint:css:fix": "npx stylelint **/*.css --fix",
+        "eslint": "npx eslint **/*.{ts,tsx}",
+        "eslint:fix": "npx eslint **/*.{ts,tsx} --fix",
+        "stylelint": "npx stylelint **/*.css",
+        "stylelint:fix": "npx stylelint **/*.css --fix",
+        "prettier": "prettier --write .",
+        "tscompile": "tsc",
+        "lint": "npm run eslint && npm run stylelint && npm run prettier && npm run tscompile",
+        "lint:fix": "npm run eslint:fix && npm run stylelint:fix && npm run prettier && npm run tscompile",
         "generate:api": "cross-env BE_URL='' node scripts/generate-api.mjs"
     },
     "devDependencies": {

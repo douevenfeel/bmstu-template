@@ -26,8 +26,25 @@
         "prettier"
     ],
     "rules": {
+        "react/prop-types": "off",
         "prettier/prettier": "error",
         "@typescript-eslint/ban-ts-comment": "warn",
+        "@typescript-eslint/ban-types": [
+            "error",
+            {
+                "types": {
+                    "React.FC": {
+                        "message": "Import { FC } from 'react'"
+                    },
+                    "React.FunctionComponent": {
+                        "message": "Import { FC } from 'react'"
+                    },
+                    "FunctionComponent": {
+                        "message": "Import { FC } from 'react'"
+                    }
+                }
+            }
+        ],
         "@typescript-eslint/consistent-type-imports": [
             "error",
             {
@@ -87,5 +104,6 @@
         ],
         "simple-import-sort/imports": "error",
         "simple-import-sort/exports": "error"
-    }
+    },
+    "overrides": [{ "files": ["generate-api.mjs"], "rules": { "no-undef": "off" } }]
 }

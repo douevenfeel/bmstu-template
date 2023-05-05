@@ -3,7 +3,7 @@ import { generateApi } from 'swagger-typescript-api';
 
 generateApi({
     name: 'Api.ts',
-    output: resolve(import.meta.cwd(), './src/api'),
-    url: import.meta.env.BE_URL,
+    output: resolve(process.cwd(), './src/api'),
+    url: process.env.BE_URL,
     httpClientType: 'axios',
 });

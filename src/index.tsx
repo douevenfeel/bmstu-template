@@ -1,6 +1,7 @@
 import 'app/styles/index.css';
 
-import React from 'react';
+import { StyledEngineProvider } from '@mui/material/styles';
+import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
@@ -15,9 +16,11 @@ if (!container) {
 const root = createRoot(container);
 
 root.render(
-    <React.StrictMode>
-        <BrowserRouter>
-            <App />
-        </BrowserRouter>
-    </React.StrictMode>
+    <StrictMode>
+        <StyledEngineProvider injectFirst>
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
+        </StyledEngineProvider>
+    </StrictMode>
 );

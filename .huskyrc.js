@@ -1,5 +1,5 @@
 module.exports = {
     hooks: {
-        'pre-commit': 'npx lint-staged',
+        'pre-commit': ['tsc', 'npx lint-staged'].join(' && '),
     },
 };
